@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> Hello</h1>
+    {% for wiki in list_of_pages %}
+    <h5> {{ wiki.title }} </h5>
+    <p> {{ wiki.content|truncatechars:100 }}</p>
+    <a href="{$ url 'wiki:wiki-detail-page' wiki.slug %}">link</a>
+    {% endfor %}
+{% endblock %}
